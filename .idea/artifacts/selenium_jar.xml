@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="selenium:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/selenium_jar</output-path>
+    <root id="root">
+      <element id="archive" name="selenium.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
