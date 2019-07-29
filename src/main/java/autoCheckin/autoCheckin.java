@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
 import java.io.*;
+import java.net.URL;
 import java.net.URLDecoder;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
@@ -64,8 +65,6 @@ public class autoCheckin {
 
     public void checkIn(ChromeDriver driver, String confirmationProp, String firstNameProp, String lastNameProp, String ssName) throws InterruptedException {
         InputStream inputStream = this.getClass().getResourceAsStream("/login.properties");
-
-
         Properties p = new Properties();
         try {
             p.load(inputStream);
@@ -73,8 +72,12 @@ public class autoCheckin {
             e.printStackTrace();
         }
 
-        File file = new File(URLDecoder.decode(ClassLoader.getSystemResource("chromedriver.exe").getPath()));
-        System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+        System.out.println(String.valueOf(getClass().getResource(String.valueOf(getClass().getResource("/chromedriver.exe")))));
+
+        String path = System.getProperty("user.dir");
+        System.out.println(path+"\\out\\production\\resources\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", path+"\\out\\production\\resources\\chromedriver.exe");
+
         ChromeOptions options = new ChromeOptions();
         options.addArguments("headless");
         options.addArguments("window-size=1200x2400");
