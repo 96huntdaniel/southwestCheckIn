@@ -76,7 +76,7 @@ public class autoCheckin {
         File file = new File(URLDecoder.decode(ClassLoader.getSystemResource("chromedriver.exe").getPath()));
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("headless");
+        options.addArguments("headless");
         options.addArguments("window-size=1200x2400");
 
         driver = new ChromeDriver(options);
