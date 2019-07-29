@@ -21,6 +21,7 @@ public class autoCheckin {
 
     public void execute() throws FileNotFoundException {
 
+
         FileReader reader = null;
         InputStream inputStream = this.getClass().getResourceAsStream("/login.properties");
 
@@ -43,23 +44,23 @@ public class autoCheckin {
     }
 
     public  void run1() {
-
+        System.out.println("Starting main passenger...");
         try {
             checkIn(null,"confirmation", "firstName", "lastName", "mainScreenshot.png");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
+        System.out.println("Main passenger finished.");
     }
 
     public void run2() {
-
+        System.out.println("Starting companion...");
         try {
             checkIn(null,"companionConfirmation", "companionFirstName", "companionLastName", "companionScreenshot.png");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
+        System.out.println("Companion finished.");
 
     }
 
@@ -71,11 +72,8 @@ public class autoCheckin {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        System.out.println(String.valueOf(getClass().getResource(String.valueOf(getClass().getResource("/chromedriver.exe")))));
-
+        
         String path = System.getProperty("user.dir");
-        System.out.println(path+"\\out\\production\\resources\\chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", path+"\\out\\production\\resources\\chromedriver.exe");
 
         ChromeOptions options = new ChromeOptions();
