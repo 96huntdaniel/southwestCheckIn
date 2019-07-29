@@ -44,7 +44,7 @@ public class autoCheckin {
     public  void run1() {
 
         try {
-            checkIn(null,"confirmation", "firstName", "lastName", "mainScreenshot");
+            checkIn(null,"confirmation", "firstName", "lastName", "mainScreenshot.png");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -54,7 +54,7 @@ public class autoCheckin {
     public void run2() {
 
         try {
-            checkIn(null,"companionConfirmation", "companionFirstName", "companionLastName", "companionScreenshot");
+            checkIn(null,"companionConfirmation", "companionFirstName", "companionLastName", "companionScreenshot.png");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
